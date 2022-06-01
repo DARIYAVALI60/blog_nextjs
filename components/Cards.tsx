@@ -41,9 +41,9 @@ const Data = [
 
 export default function blogCard() {
   return (
-    <Box style={{height:"83vh"}} overflowY={"scroll"}>
+    <Box style={{ height: "83vh" }} overflowY={"scroll"}>
       {Data.map((props) => (
-        <Center py={2} px={4}>
+        <Center py={2} px={4} key={props.id}>
           <Box
             maxW={"1150px"}
             w={"full"}
