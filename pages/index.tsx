@@ -1,6 +1,12 @@
+import BlogCard from "../components/Cards";
+import NavBar from "../components/Navbar";
+
 const Home = () => {
-  return <>
-  </>;
+  return (
+    <>
+      <NavBar children={<BlogCard />} />
+    </>
+  );
 };
 
 export default Home;
