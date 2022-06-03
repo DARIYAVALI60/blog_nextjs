@@ -5,7 +5,7 @@ import {
   Text,
   Stack,
   Avatar,
-  useColorModeValue,
+  // useColorModeValue,
   Divider,
   Button,
   VStack,
@@ -93,7 +93,7 @@ export default function BlogCard() {
         <Center py={2} px={4} key={props.id}>
           <Box
             w={"full"}
-            bg={useColorModeValue("white", "gray.900")}
+            bg={"white"}
             boxShadow={"md"}
             maxW={"1200"}
             rounded={"md"}
