@@ -95,7 +95,7 @@ export default function blogCard() {
             w={"full"}
             bg={useColorModeValue("white", "gray.900")}
             boxShadow={"md"}
-            maxW={"1000"}
+            maxW={"1200"}
             rounded={"md"}
             p={4}
             overflow={"hidden"}
@@ -103,7 +103,7 @@ export default function blogCard() {
             <Stack mb={2} direction={"row"} spacing={2} align={"center"}>
               <Avatar size={"sm"} src={props.avatar} />
               <Stack direction={"column"} spacing={0} fontSize={"small"}>
-                <Text fontWeight={600} fontFamily="Poppins">
+                <Text color={"gray.700"} fontWeight={600} fontFamily={"Open Sans"}>
                   {props.author}
                 </Text>
                 <Text color={"gray.500"}>{props.data}</Text>
@@ -139,7 +139,7 @@ export default function blogCard() {
               <Text
                 overflow={"hidden"}
                 fontSize={"sm"}
-                maxH={"85px"}
+                maxH={"100px"}
                 color={"gray.700"}
                 fontFamily={"Open sans"}
               >

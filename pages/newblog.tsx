@@ -1,14 +1,15 @@
 import BlogCard from "../components/cards/Cards";
 import NavBar from "../components/Navbar";
+import NewBlog from "../components/NewBlog";
 
-const Home = () => {
+const newblog = () => {
   return (
     <>
       <NavBar>
-        <BlogCard />
+        <NewBlog />
       </NavBar>
     </>
   );
 };
 
-export default Home;
+export default newblog;

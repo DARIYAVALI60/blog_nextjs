@@ -31,20 +31,24 @@ import {
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiPlus,
 } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
+import { Router, useRouter } from "next/router";
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  routing: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Home", icon: FiHome, routing: "/" },
+  { name: "Trending", icon: FiTrendingUp, routing: "/trending" },
+  { name: "New Blog", icon: FiPlus, routing: "/newblog" },
+  { name: "Explore", icon: FiCompass, routing: "/explore" },
+  { name: "Favourites", icon: FiStar, routing: "/favourites" },
+  { name: "Settings", icon: FiSettings, routing: "/settings" },
 ];
 
 export default function NavBar({ children }: { children: ReactNode }) {
@@ -93,12 +97,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Blog
+          WeBlog
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} link={link.routing} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
@@ -109,11 +113,14 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
+  link: string;
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
+  const router = useRouter();
   return (
     <Link
-      href="#"
+      // href={routing}
+      onClick={() => router.push(link, undefined, { shallow: true })}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
@@ -124,6 +131,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         borderRadius="lg"
         role="group"
         cursor="pointer"
+        fontFamily={"Poppins"}
         _hover={{
           bg: "cyan.400",
           color: "white",
