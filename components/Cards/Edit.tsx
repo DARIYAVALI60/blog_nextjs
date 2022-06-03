@@ -30,7 +30,7 @@ export default function Edit(props: { title: string; content: string }) {
         <BiEdit color={"#475569"} size={"20"} />
       </Button>
 
-      <Modal onClose={onClose} size={"3xl"} isOpen={isOpen}>
+      <Modal onClose={onClose} size={"3xl"} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Edit Blog</ModalHeader>
