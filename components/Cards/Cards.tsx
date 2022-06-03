@@ -86,7 +86,7 @@ const Data = [
   },
 ];
 
-export default function blogCard() {
+export default function BlogCard() {
   return (
     <Box style={{ height: "90vh" }} overflowY={"scroll"}>
       {Data.map((props) => (
@@ -103,7 +103,11 @@ export default function blogCard() {
             <Stack mb={2} direction={"row"} spacing={2} align={"center"}>
               <Avatar size={"sm"} src={props.avatar} />
               <Stack direction={"column"} spacing={0} fontSize={"small"}>
-                <Text color={"gray.700"} fontWeight={600} fontFamily={"Open Sans"}>
+                <Text
+                  color={"gray.700"}
+                  fontWeight={600}
+                  fontFamily={"Open Sans"}
+                >
                   {props.author}
                 </Text>
                 <Text color={"gray.500"}>{props.data}</Text>
