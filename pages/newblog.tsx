@@ -1,4 +1,3 @@
-import BlogCard from "../components/cards/Cards";
 import NavBar from "../components/Navbar";
 import NewBlog from "../components/NewBlog";
 
