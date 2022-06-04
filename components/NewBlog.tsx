@@ -15,7 +15,8 @@ export default function NewBlog() {
             <Box
                 maxW={"1000"}
                 w={"full"}
-                // h={{base: "650",sm:"550"}}
+                maxH={{base: "750",sm:"550"}}
+                overflowY={"scroll"}
                 bg={useColorModeValue("white", "gray.900")}
                 boxShadow={"xl"}
                 rounded={"md"}
@@ -40,7 +41,7 @@ export default function NewBlog() {
                         fontFamily={"Poppins"}
                     />
                     <Textarea
-                        paddingBottom={"80"}
+                        paddingBottom={"96"}
                         fontSize={{base: "small", md: "sm", xl: "md"}}
                         color={"gray.600"}
                         fontFamily={"Roboto"}
