@@ -45,11 +45,6 @@ export default function NewBlog() {
             fontFamily={"Roboto"}
             placeholder="Content"
           />
-          <input
-            style={{ fontFamily: "Roboto", color: "#334155" }}
-            type={"file"}
-            accept={"image/*"}
-          />
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Avatar
