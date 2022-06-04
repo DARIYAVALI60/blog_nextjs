@@ -7,11 +7,11 @@ const Home = () => {
   if (session) {
     return (
       <>
+        <button onClick={() => signOut()}>Sign out</button>
         <NavBar>
           <BlogCard />
         </NavBar>
         Signed in as <br />
-        <button onClick={() => signOut()}>Sign out</button>
       </>
     );
   }
