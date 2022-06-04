@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import BlogCard from "../components/Cards/Cards";
 import NavBar from "../components/Navbar";
@@ -7,7 +8,7 @@ const Home = () => {
   if (session) {
     return (
       <>
-        <button onClick={() => signOut()}>Sign out</button>
+        <Button onClick={() => signOut()}>Sign out</Button>
         <NavBar>
           <BlogCard />
         </NavBar>
