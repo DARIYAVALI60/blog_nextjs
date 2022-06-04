@@ -36,6 +36,7 @@ import {
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 import { useRouter } from "next/router";
+import { signOut } from "next-auth/react";
 
 interface LinkItemProps {
   name: string;
@@ -235,7 +236,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={() => signOut()}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
