@@ -15,7 +15,7 @@ export default function NewBlog() {
             <Box
                 maxW={"1000"}
                 w={"full"}
-                h={{base: "650",sm:"550"}}
+                // h={{base: "650",sm:"550"}}
                 bg={useColorModeValue("white", "gray.900")}
                 boxShadow={"xl"}
                 rounded={"md"}
