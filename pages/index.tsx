@@ -1,7 +1,7 @@
 import BlogCard from "../components/Cards/Cards";
 import NavBar from "../components/Navbar";
 
-const Home = () => {
+ const Home = () => {
   return (
     <>
       <NavBar>
@@ -10,5 +10,4 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
+export default Home
