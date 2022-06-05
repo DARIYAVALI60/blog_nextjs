@@ -10,7 +10,6 @@ export const ShareButton = () => {
         variant="ghost"
         _hover={{
           transform: "translateY(-2px)",
-          boxShadow: "md",
         }}
       >
         <BiShareAlt size={"16"} color={"#475569"} />

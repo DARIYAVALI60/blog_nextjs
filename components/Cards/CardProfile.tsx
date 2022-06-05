@@ -7,6 +7,7 @@ import {
   Heading,
   HStack,
 } from "@chakra-ui/react";
+import { useSession } from "next-auth/react";
 import React from "react";
 import { DeleteButton } from "./ActionButton/DeleteButton";
 import { EditButton } from "./ActionButton/EditButton";
@@ -22,6 +23,7 @@ interface CardProfileProps {
 }
 
 export const CardContent: React.FC<CardProfileProps> = (props) => {
+  const { data: session } = useSession();
   return (
     <div>
       <Stack mb={2} direction={"row"} spacing={2} align={"center"}>
@@ -41,8 +43,14 @@ export const CardContent: React.FC<CardProfileProps> = (props) => {
             {props.title}
           </Heading>
           <Box>
-            <EditButton title={props.title} content={props.content} />
-            <DeleteButton />
+            {session && session.user?.name === props.author ? (
+              <>
+                <EditButton title={props.title} content={props.content} />
+                <DeleteButton />
+              </>
+            ) : (
+              <></>
+            )}
           </Box>
         </HStack>
         <Text

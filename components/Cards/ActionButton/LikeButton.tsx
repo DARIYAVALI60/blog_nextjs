@@ -1,9 +1,11 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
 import { BiLike } from "react-icons/bi";
+import { useEffect, useState } from "react";
 
 export const LikeButton = () => {
-  const [like, setLike] = React.useState(false);
+  useEffect(() => {}, []);
+  const [like, setLike] = useState(false);
   return (
     <div>
       <Button
@@ -13,7 +15,6 @@ export const LikeButton = () => {
         color={"#0284c7"}
         _hover={{
           transform: "translateY(-2px)",
-          boxShadow: "md",
         }}
         leftIcon={<BiLike color={"#0ea5e9"} size={"16"} fontWeight={""} />}
         onClick={() => setLike(!like)}
