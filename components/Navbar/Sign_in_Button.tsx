@@ -13,11 +13,11 @@ export default function Sign_in_Button() {
         }}
         variant={"outline"}
         leftIcon={<FcGoogle />}
-        size={"md"}
+        size={"sm"}
         onClick={() => signIn("google", { callbackUrl: "/" })}
       >
         <Center>
-          <Text fontSize={{base:"none",md:"md"}} fontWeight={"medium"} fontFamily={"Roboto"}>
+          <Text fontSize={{base:"xs",md:"sm"}} fontWeight={"medium"} fontFamily={"Roboto"}>
             Sign
           </Text>
         </Center>
