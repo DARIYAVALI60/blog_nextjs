@@ -1,14 +1,14 @@
-import React from 'react';
-import NavBar from "../components/Navbar";
+import React from "react";
+import NavBar from "../components/Navbar/Navbar";
 
 function Trending() {
-    return (
-        <div>
-            <NavBar>
-                <h1>Hello From Trending</h1>
-            </NavBar>
-        </div>
-    );
+  return (
+    <div>
+      <NavBar>
+        <h1>Hello From Trending</h1>
+      </NavBar>
+    </div>
+  );
 }
 
 export default Trending;
