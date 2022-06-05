@@ -13,7 +13,7 @@ export default function Sign_in_Button() {
         }}
         variant={"outline"}
         leftIcon={<FcGoogle />}
-        size={"xs"}
+        size={"md"}
         onClick={() => signIn("google", { callbackUrl: "/" })}
       >
         <Center>
