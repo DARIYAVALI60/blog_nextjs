@@ -3,7 +3,6 @@ import {
   Center,
   Text,
   Stack,
-  Avatar,
   useColorModeValue,
   Input,
   Textarea,
@@ -11,13 +10,15 @@ import {
 
 export default function NewBlog() {
   return (
-    <Center py={6} px={2}>
+    <Center py={4} px={2}>
       <Box
         maxW={"1000"}
         w={"full"}
         bg={useColorModeValue("white", "gray.900")}
-        // boxShadow={"xl"}
         rounded={"md"}
+        style={{
+          border: "1px solid #cbd5e1 ",
+        }}
         p={4}
         overflow={"hidden"}
       >
@@ -32,32 +33,21 @@ export default function NewBlog() {
             Blog
           </Text>
           <Input
-            placeholder="Title"
+            placeholder="Untitled"
             size="lg"
             color={"#334155"}
-            fontSize={{ base: "md", md: "xl", xl: "2xl" }}
-            fontFamily={"Poppins"}
+            fontSize={{ base: "md", md: "lg", xl: "xl" }}
+            fontFamily={"Open Sans"}
+            variant={"unstyled"}
           />
           <Textarea
-            paddingBottom={"80"}
+            paddingBottom={"96"}
             fontSize={{ base: "small", md: "sm", xl: "md" }}
             color={"gray.600"}
-            fontFamily={"Roboto"}
+            fontFamily={"Open Sans"}
             placeholder="Content"
+            variant={"unstyled"}
           />
-        </Stack>
-        <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Avatar
-            src={
-              "https://lh3.googleusercontent.com/a-/AOh14Gi-niaolq7-Wpc97EAD77WzhMpgcyHqeUD1q4Xdig=s360-p-rw-no"
-            }
-          />
-          <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-            <Text color={"gray.700"} fontWeight={600} fontFamily={"Open Sans"}>
-              Sakkurthi Sashank
-            </Text>
-            <Text color={"gray.500"}>Feb 08, 2021 · 6min read</Text>
-          </Stack>
         </Stack>
       </Box>
     </Center>
