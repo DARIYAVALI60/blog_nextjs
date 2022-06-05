@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 
 export default function Sign_in_Button() {
   return (
-    <Center p={2}>
+    <Center>
       <Button
         boxShadow={"md"}
         _focus={{ boxShadow: "none" }}
