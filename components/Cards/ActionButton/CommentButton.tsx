@@ -10,7 +10,6 @@ export const CommentButton = () => {
         color={"#ea580c"}
         _hover={{
           transform: "translateY(-2px)",
-          boxShadow: "md",
         }}
         variant="ghost"
         leftIcon={<BiCommentDetail size={"16"} color={"#f97316"} />}
