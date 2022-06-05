@@ -16,7 +16,7 @@ export default function Sign_in_Button() {
         onClick={() => signIn("google", { callbackUrl: "/" })}
       >
         <Center>
-          <Text fontWeight={"medium"} fontFamily={"Roboto"}>
+          <Text fontSize={{base:"sm",md:"md"}} fontWeight={"medium"} fontFamily={"Roboto"}>
             Sign
           </Text>
         </Center>
