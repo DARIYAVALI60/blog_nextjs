@@ -4,7 +4,7 @@ import { CommentButton } from "./ActionButton/CommentButton";
 import { ShareButton } from "./ActionButton/ShareButton";
 import { LikeButton } from "./ActionButton/LikeButton";
 import { MoreButton } from "./ActionButton/MoreButton";
-import { CardContent } from "./CardProfile";
+import { CardContent } from "./CardContent";
 
 export default function BlogCard() {
   return (
