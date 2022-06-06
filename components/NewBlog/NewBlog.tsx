@@ -12,11 +12,14 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import { NewBlogError } from "../error/Error";
+import Link from "next/link";
 
 export default function NewBlog() {
   const { data: session } = useSession();
   const [title, setTitle] = useState("");
   const [Content, setContent] = useState("");
+  const [lengthError, setLengthError] = useState(false);
 
   const handleTitle = (e: any) => {
     e.preventDefault();
@@ -28,20 +31,24 @@ export default function NewBlog() {
   };
 
   const PostData = () => {
-    axios
-      .post("/api/Post/post", {
-        title: title,
-        content: Content,
-        email: session?.user?.email,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (title.length > 10 && Content.length > 30) {
+      axios
+        .post("/api/Post/post", {
+          title: title,
+          content: Content,
+          email: session?.user?.email,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      setLengthError(true);
+      setTimeout(() => setLengthError(false), 10000);
+    }
   };
-
   return (
     <Center py={4} px={2}>
       <Box
@@ -95,13 +102,21 @@ export default function NewBlog() {
                 PostData();
               }}
               colorScheme="twitter"
+              size={"sm"}
             >
               Publish
             </Button>
-            <Button _focus={{ boxShadow: "none" }} colorScheme="red">
-              discharge
-            </Button>
+            <Link href={"/"}>
+              <Button
+                _focus={{ boxShadow: "none" }}
+                colorScheme="red"
+                size={"sm"}
+              >
+                discharge
+              </Button>
+            </Link>
           </HStack>
+          {lengthError && <NewBlogError />}
         </Stack>
       </Box>
     </Center>

@@ -6,6 +6,7 @@ import {
   Divider,
   Heading,
   HStack,
+  Badge,
 } from "@chakra-ui/react";
 import { useSession } from "next-auth/react";
 import React from "react";
@@ -35,6 +36,7 @@ export const CardContent: React.FC<CardProfileProps> = (props) => {
           <Text color={"gray.500"}>{props.data}</Text>
         </Stack>
         <Follow follow={props.follow} />
+        <Badge colorScheme='green'>#Success</Badge>
       </Stack>
       <Stack>
         <Divider style={{ borderColor: "#938F8F" }} />

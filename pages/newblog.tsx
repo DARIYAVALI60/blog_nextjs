@@ -1,5 +1,5 @@
 import NavBar from "../components/Navbar/Navbar";
-import NewBlog from "../components/NewBlog";
+import NewBlog from "../components/NewBlog/NewBlog";
 
 const newblog = () => {
   return (
