@@ -1,11 +1,21 @@
+// import BlogCard from "../components/Cards/Cards";
+import axios from "axios";
+import { GetServerSideProps } from "next";
 import BlogCard from "../components/Cards/Cards";
 import NavBar from "../components/Navbar/Navbar";
 
-const Home = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/blog/post");
+  console.log(res.data[0].Posts);
+  return { props: { PostData: res.data } };
+};
+
+const Home = ({ PostData }: any) => {
+  console.log(PostData.Posts);
   return (
     <>
       <NavBar>
-        <BlogCard />
+        <BlogCard data={PostData} />
       </NavBar>
     </>
   );

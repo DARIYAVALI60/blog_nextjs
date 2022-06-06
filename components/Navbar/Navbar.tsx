@@ -114,7 +114,6 @@ const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
   const router = useRouter();
   return (
     <Link
-      // href={routing}
       onClick={() => router.push(link, undefined, { shallow: true })}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
@@ -151,39 +150,46 @@ const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
+  children?: JSX.Element | JSX.Element[];
 }
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-  const { data: session } = useSession();
   return (
-    <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 4 }}
-      height="16"
-      alignItems="center"
-      bg={useColorModeValue("white", "gray.900")}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      justifyContent={{ base: "space-between", md: "flex-end" }}
-      {...rest}
-    >
-      <IconButton
-        display={{ base: "flex", md: "none" }}
-        onClick={onOpen}
-        variant="outline"
-        aria-label="open menu"
-        icon={<FiMenu />}
-      />
-
-      <Text
-        display={{ base: "flex", md: "none" }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold"
+    <>
+      <Flex
+        ml={{ base: 0, md: 60 }}
+        px={{ base: 4, md: 4 }}
+        height="16"
+        alignItems="center"
+        bg={useColorModeValue("white", "gray.900")}
+        borderBottomWidth="1px"
+        borderBottomColor={useColorModeValue("gray.200", "gray.700")}
+        justifyContent={{ base: "space-between", md: "flex-end" }}
+        {...rest}
       >
-        WeBlog
-      </Text>
-      {session ? <Profile /> : <Sign_in_Button />}
-    </Flex>
+        <IconButton
+          display={{ base: "flex", md: "none" }}
+          onClick={onOpen}
+          variant="outline"
+          aria-label="open menu"
+          icon={<FiMenu />}
+        />
+
+        <Text
+          display={{ base: "flex", md: "none" }}
+          fontSize="2xl"
+          fontFamily="monospace"
+          fontWeight="bold"
+        >
+          WeBlog
+        </Text>
+        <NavBarProfile />
+      </Flex>
+    </>
   );
+};
+
+const NavBarProfile = () => {
+  const { data: session } = useSession();
+  return <>{session ? <Profile /> : <Sign_in_Button />}</>;
 };

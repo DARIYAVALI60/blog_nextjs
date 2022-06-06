@@ -33,7 +33,7 @@ export default function NewBlog() {
   const PostData = () => {
     if (title.length > 10 && Content.length > 30) {
       axios
-        .post("/api/Post/post", {
+        .post("/api/blog/post", {
           title: title,
           content: Content,
           email: session?.user?.email,
