@@ -116,8 +116,8 @@ export default function NewBlog() {
               </Button>
             </Link>
           </HStack>
-          {lengthError && <NewBlogError />}
         </Stack>
+      {lengthError && <NewBlogError />}
       </Box>
     </Center>
   );

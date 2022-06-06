@@ -4,7 +4,7 @@ import React from "react";
 export const NewBlogError = () => {
   return (
     <div>
-      <Alert status="error" height={"10"}>
+      <Alert status="error" mt={"3"} height={"20"}>
         <AlertIcon />
         <AlertDescription>
           Your Title is must be greater than 10 words and Content is must be greater than 30
