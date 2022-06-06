@@ -15,8 +15,8 @@ import { EditButton } from "./ActionButton/EditButton";
 import { Follow } from "./ActionButton/FollowButton";
 
 interface CardProfileProps {
-  avatar: string | undefined;
-  author: string;
+  image: string | undefined;
+  name: string;
   data: string;
   follow: boolean;
   title: string;
@@ -28,15 +28,15 @@ export const CardContent: React.FC<CardProfileProps> = (props) => {
   return (
     <div>
       <Stack mb={2} direction={"row"} spacing={2} align={"center"}>
-        <Avatar size={"sm"} src={props.avatar} />
+        <Avatar size={"sm"} src={props.image} />
         <Stack direction={"column"} spacing={0} fontSize={"small"}>
           <Text color={"gray.700"} fontWeight={600} fontFamily={"Open Sans"}>
-            {props.author}
+            {props.name}
           </Text>
           <Text color={"gray.500"}>{props.data}</Text>
         </Stack>
         <Follow follow={props.follow} />
-        <Badge colorScheme='green'>#Success</Badge>
+        <Badge colorScheme="green">#Success</Badge>
       </Stack>
       <Stack>
         <Divider style={{ borderColor: "#938F8F" }} />
@@ -45,7 +45,7 @@ export const CardContent: React.FC<CardProfileProps> = (props) => {
             {props.title}
           </Heading>
           <Box>
-            {session && session.user?.name === props.author ? (
+            {session && session.user?.name === props.name ? (
               <>
                 <EditButton title={props.title} content={props.content} />
                 <DeleteButton />
