@@ -5,13 +5,11 @@ import BlogCard from "../components/Cards/Cards";
 import NavBar from "../components/Navbar/Navbar";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await axios.get("/api/blog/post");
-  console.log(res.data[0].Posts);
+  const res = await axios.get(process.env.BlogPostGetApi as string);
   return { props: { PostData: res.data } };
 };
 
 const Home = ({ PostData }: any) => {
-  console.log(PostData.Posts);
   return (
     <>
       <NavBar>
