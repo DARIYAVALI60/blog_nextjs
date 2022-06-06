@@ -7,7 +7,7 @@ export const NewBlogError = () => {
       <Alert status="error" height={"10"}>
         <AlertIcon />
         <AlertDescription>
-          Your Title is greater than 10 words and Content is greater than 30
+          Your Title is must be greater than 10 words and Content is must be greater than 30
           words
         </AlertDescription>
       </Alert>
