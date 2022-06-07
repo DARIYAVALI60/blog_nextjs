@@ -6,8 +6,10 @@ import NavBar from "../components/Navbar/Navbar";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await axios.get(process.env.BlogPostGetApi as string);
+  
   return { props: { PostData: res.data } };
 };
+
 
 const Home = ({ PostData }: any) => {
   return (
